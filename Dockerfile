@@ -1,6 +1,5 @@
-FROM jenkins:2.46.3
+FROM jenkins/jenkins:latest
 
-# needed when use jenkins image
 USER root
 
 RUN set -ex \
