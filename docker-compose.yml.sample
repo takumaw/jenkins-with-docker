@@ -1,5 +1,5 @@
 jenkins:
-  build: ./dockerfile
+  build: .
   restart: unless-stopped
   privileged: true
   ports:
