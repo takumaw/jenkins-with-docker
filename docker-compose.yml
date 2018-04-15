@@ -1,12 +1,9 @@
 jenkins:
-  build: .
-  # you are adviced to move Dockerfile out of a directory
-  # that doesn't contains the container's persistent volume directory.
-  restart: always
+  build: ./dockerfile
+  restart: unless-stopped
+  privileged: true
   ports:
     - 8080:8080
     - 50000:50000
   volumes:
     - ./jenkins_home:/var/jenkins_home
-    - /etc/localtime:/etc/localtime:ro
-  privileged: true
