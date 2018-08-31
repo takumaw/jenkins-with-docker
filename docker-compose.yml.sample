@@ -4,8 +4,12 @@ services:
     build: .
     restart: unless-stopped
     privileged: true
+    environment:
+      - JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP="default-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self'; script-src 'self' 'unsafe-inline';"
     ports:
       - 8080:8080
       - 50000:50000
     volumes:
       - ./jenkins_home:/var/jenkins_home
+      #- ./docker:/var/lib/docker
+      #- ./daemon.json:/etc/docker/daemon.json:ro
