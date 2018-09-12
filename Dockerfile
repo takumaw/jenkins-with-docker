@@ -5,6 +5,7 @@ USER root
 RUN set -ex \
 	&& apt-get update && apt-get install -y --no-install-recommends \
 		build-essential \
+		cron \
 		python-pip \
 		python-setuptools \
 		supervisor \
